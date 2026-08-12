@@ -5,7 +5,10 @@
             "label": "cmake: configure",
             "type": "shell",
             "command": "cmake",
-            "args": ["--preset", "mingw-debug"],
+            "args": [
+                "--preset",
+                "mingw-debug"
+            ],
             "problemMatcher": [],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -15,12 +18,31 @@
             "label": "cmake: build",
             "type": "shell",
             "command": "cmake",
-            "args": ["--build", "--preset", "mingw-debug"],
+            "args": [
+                "--build",
+                "--preset",
+                "mingw-debug"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": ["$gcc"],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "cmake: build and run",
+            "type": "shell",
+            "command": "${workspaceFolder}/build/mingw-debug/SiderEngine.exe",
+            "dependsOn": "cmake: build",
+            "problemMatcher": [],
+            "presentation": {
+                "clear": true
+            },
             "options": {
                 "cwd": "${workspaceFolder}"
             }
@@ -29,8 +51,15 @@
             "label": "cmake: clean rebuild",
             "type": "shell",
             "command": "cmake",
-            "args": ["--build", "--preset", "mingw-debug", "--clean-first"],
-            "problemMatcher": ["$gcc"],
+            "args": [
+                "--build",
+                "--preset",
+                "mingw-debug",
+                "--clean-first"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
             "options": {
                 "cwd": "${workspaceFolder}"
             }
