@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+# Build output
+build/
+out/
+CMakeUserPresets.json
+compile_commands.json
+.cache/
+
+# Compiled shaders
+*.spv
